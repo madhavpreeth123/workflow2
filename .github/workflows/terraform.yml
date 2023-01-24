@@ -46,6 +46,24 @@ jobs:
         docker push madhavpreeth123/myimage
     - name: fetching image from dockerhub
       run: docker pull madhavpreeth123/myimage
+     - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
+        aws-secret-access-key: ${{secrets.AWS_SECRETE_KEY}}
+        aws-region: us-east-1
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+    - name: build
+      run: docker build -t madhav .
+    - name: tag
+      run: docker tag madhav:latest 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
+    - name: push
+      run: docker push 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
 
 
 
