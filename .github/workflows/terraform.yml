@@ -44,6 +44,8 @@ jobs:
     - name: Push the image
       run: |
         docker push madhavpreeth123/myimage
+    - name: fetching image from dockerhub
+      run: docker pull madhavpreeth123/myimage
 
 
 
