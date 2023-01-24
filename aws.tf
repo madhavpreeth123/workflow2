@@ -8,7 +8,7 @@ resource "aws_instance" "server" {
   instance_type = "t2.micro"
   subnet_id="subnet-08408a6d172ed0bd5"
   security_groups=["sg-0bc77cca92a247311"]
-  key_name=aws_key_pair.key.id
+  
 
 
   tags = {
