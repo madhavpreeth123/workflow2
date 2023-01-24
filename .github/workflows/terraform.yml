@@ -29,3 +29,22 @@ jobs:
       run: terraform plan
     - name: building terraform
       run: terraform apply -auto-approve
+    - name: build docker image
+      run: docker build -t madhavpreeth123/myimg .
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        docker build -t myimage .
+    - name: Tag the image
+      run: |
+        docker tag myimage madhavpreeth123/myimage
+    - name: Log in to Docker Hub
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    - name: Push the image
+      run: |
+        docker push madhavpreeth123/myimage
+
+
+
+
