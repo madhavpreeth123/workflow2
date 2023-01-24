@@ -46,7 +46,7 @@ jobs:
         docker push madhavpreeth123/myimage
     - name: fetching image from dockerhub
       run: docker pull madhavpreeth123/myimage
-     - name: Checkout
+    - name: Checkout
       uses: actions/checkout@v3
 
     - name: Configure AWS credentials
