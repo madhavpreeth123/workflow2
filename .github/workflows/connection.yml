@@ -4,6 +4,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: connection
         run: ssh -i myinstance.pem ubuntu@52.90.23.14
     
