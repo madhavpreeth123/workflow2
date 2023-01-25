@@ -1,0 +1,10 @@
+name: connect to ec2
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: change permissions
+        run: chmod 400 myinstance.pem
+    
+    
