@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: change permissions
-        run: chmod 400 workflow2/myinstance.pem
+        run: chmod 400 myinstance.pem
     
     
