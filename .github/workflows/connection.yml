@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: change permissions
-        run: chmod 400 myinstance.pem
+        run: chmod 400 workflow2/myinstance.pem
     
     
