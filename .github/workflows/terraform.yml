@@ -59,11 +59,17 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
     - name: build
-      run: docker build -t madhav .
+      run: docker build -t my_first .
     - name: tag
       run: docker tag my_first:latest public.ecr.aws/w5q0r1u0/my_first:latest
     - name: push
       run: docker push public.ecr.aws/w5q0r1u0/my_first:latest
+    - name: CONTAINERS LIST
+      run: docker ps -a
+    - name: atart container
+      run: docker ps -q -a
+    - name: list of running containers
+      run: docker ps
 
 
 
