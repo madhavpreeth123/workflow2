@@ -73,9 +73,11 @@ jobs:
       run: docker push 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
     - name: pull
       run: docker pull 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
+    - name: cont
+      run: docker run madhav:latest
     - name: CONTAINERS LIST
       run: docker ps -a
-    - name: atart container
+    - name: start container
       run: docker ps -q -a
     - name: list of running containers
       run: docker ps
