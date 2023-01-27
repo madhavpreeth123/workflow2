@@ -61,10 +61,9 @@ jobs:
     - name: build
       run: docker build -t madhav .
     - name: tag
-      run: docker tag madhav:latest 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
+      run: docker tag my_first:latest public.ecr.aws/w5q0r1u0/my_first:latest
     - name: push
-      run: docker push 889372976153.dkr.ecr.us-east-1.amazonaws.com/madhav:latest
-
+      run: docker push public.ecr.aws/w5q0r1u0/my_first:latest
 
 
 
